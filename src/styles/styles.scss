@@ -11,10 +11,12 @@
 .body {
   height: 100vh;
   font-family: "Raleway", sans-serif;
+  transition: background-color 1s;
 }
 
 #quote-box {
   background-color: #fff;
+  transition: max-height 5s;
 }
 .quote-text {
   text-align: center;
@@ -23,6 +25,7 @@
   clear: both;
   font-weight: 500;
   font-size: 1.75em;
+  transition: color 1s;
   i {
     font-size: 1em;
     margin-right: 0.4em;
@@ -34,6 +37,7 @@
   padding-top: 20px;
   font-size: 1em;
   text-align: right;
+  transition: color 1s;
 }
 .buttons {
   a {
@@ -44,6 +48,23 @@
     margin-right: 5px;
     height: 38px;
     width: 40px;
+    transition: background-color 1s;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  button {
+    padding: 0.7em 1.4em;
+    font-size: 0.8em;
+    color: white;
+    transition: background-color 1s;
+    &:hover {
+      opacity: 0.9;
+      color: white;
+    }
+    &:active {
+      color: white;
+    }
   }
 }
 .footer {
