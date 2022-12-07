@@ -14,6 +14,11 @@ https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-dev
 - Webpack
 - Babel
 
+## To start project in development mode:
+
+- `npm install` - install necessary dependencies
+- `npm start` - start "WebpackDevServer" on your computer
+- 
 ## To deploy project to GitHub Pages
 
 - `npm run deploy` - send directory `build` to GitHub Pages
