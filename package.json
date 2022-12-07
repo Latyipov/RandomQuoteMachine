@@ -4,8 +4,9 @@
   "description": "random quote machine",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve --mode development --open"
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development --open",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "babel-loader": "^9.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.2",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
@@ -34,7 +36,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.1",
     "react": "^18.2.0",
