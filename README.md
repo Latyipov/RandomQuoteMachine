@@ -8,7 +8,6 @@ https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-dev
 - HTML
 - CSS/SCSS
 - Bootstrap
-- JQuery
 - JavaScript
 - React
 - Webpack
@@ -18,7 +17,8 @@ https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-dev
 
 - `npm install` - install necessary dependencies
 - `npm start` - start "WebpackDevServer" on your computer
-- 
+-
+
 ## To deploy project to GitHub Pages
 
 - `npm run deploy` - send directory `build` to GitHub Pages

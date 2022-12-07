@@ -25,7 +25,7 @@
   clear: both;
   font-weight: 500;
   font-size: 1.75em;
-  transition: color 1s;
+  transition: color 1s, opacity 0.5s;
   i {
     font-size: 1em;
     margin-right: 0.4em;
@@ -37,7 +37,7 @@
   padding-top: 20px;
   font-size: 1em;
   text-align: right;
-  transition: color 1s;
+  transition: color 1s, opacity 0.5s;
 }
 .buttons {
   a {
