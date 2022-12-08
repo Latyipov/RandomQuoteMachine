@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { setRandomQuote } from "./setRandomQuote";
 import { setRandomColor } from "./setRandomColor";
-import { NetButton } from "./NetButton";
+import { ShareButton } from "./ShareButton";
 
 export function Quote({ bodyBackground }) {
-  const [quoteObj, setQuoteObj] = useState(null);
+  const [quoteObject, setQuoteObject] = useState(null);
   const [color, setColor] = useState(null);
   const [opacity, setOpacity] = useState(0);
   const [error, setError] = useState(null);
@@ -15,29 +15,29 @@ export function Quote({ bodyBackground }) {
     onNewQuoteButtonClick();
   }, []);
   useEffect(() => {
-    setTwitterLink(
-      "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" +
-        encodeURIComponent(
-          '"' +
-            (quoteObj && quoteObj.quote) +
-            '" ' +
-            (quoteObj && quoteObj.author)
-        )
-    );
-    setTumblrLink(
-      "https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" +
-        encodeURIComponent(quoteObj && quoteObj.quote) +
-        "&content=" +
-        encodeURIComponent(quoteObj && quoteObj.author) +
-        "&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button"
-    );
+    if (quoteObject) {
+      setTwitterLink(
+        `https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${encodeURIComponent(
+          quoteObject.quote
+        )}" ${encodeURIComponent(quoteObject.author)}`
+      );
+
+      setTumblrLink(
+        `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=${encodeURIComponent(
+          quoteObject.quote
+        )}&content=${encodeURIComponent(
+          quoteObject.author
+        )}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`
+      );
+    }
+
     bodyBackground({ backgroundColor: color });
-  }, [quoteObj]);
+  }, [quoteObject]);
 
   const onNewQuoteButtonClick = () => {
     setOpacity(0);
     setTimeout(() => {
-      setRandomQuote(setQuoteObj, setError);
+      setRandomQuote(setQuoteObject, setError);
       setRandomColor(setColor);
       setOpacity(1);
     }, 500);
@@ -51,21 +51,21 @@ export function Quote({ bodyBackground }) {
   return (
     <div id="quote-box" className="rounded-1 p-5 m-2">
       <div className="quote-text" style={{ color: color, opacity: opacity }}>
-        <i className="fa fa-quote-left"></i>
-        <span id="text">{quoteObj && quoteObj.quote}</span>
+        <i className="quote-text__icon fa fa-quote-left"></i>
+        <span id="text">{quoteObject && quoteObject.quote}</span>
       </div>
       <div className="quote-author" style={{ color: color, opacity: opacity }}>
-        - <span id="author">{quoteObj && quoteObj.author}</span>
+        - <span id="author">{quoteObject && quoteObject.author}</span>
       </div>
       <div className="buttons d-flex justify-content-left align-items-center mt-4">
-        <NetButton
+        <ShareButton
           icon={"fa fa-twitter"}
           id={"tweet-quote"}
           title={"Tweet this quote!"}
           href={twitterLink}
           style={{ backgroundColor: color }}
         />
-        <NetButton
+        <ShareButton
           icon={"fa fa-tumblr"}
           id={"tumblr-quote"}
           title={"Post this quote on tumblr!"}

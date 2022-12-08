@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 
+$white: white;
+
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +17,7 @@
 }
 
 #quote-box {
-  background-color: #fff;
-  transition: max-height 5s;
+  background-color: $white;
 }
 .quote-text {
   text-align: center;
@@ -26,7 +27,7 @@
   font-weight: 500;
   font-size: 1.75em;
   transition: color 1s, opacity 0.5s;
-  i {
+  &__icon {
     font-size: 1em;
     margin-right: 0.4em;
   }
@@ -39,32 +40,31 @@
   text-align: right;
   transition: color 1s, opacity 0.5s;
 }
-.buttons {
-  a {
-    color: white;
-    text-align: center;
-    font-size: 1.2em;
-    padding-top: 6px;
-    margin-right: 5px;
-    height: 38px;
-    width: 40px;
-    transition: background-color 1s;
-    &:hover {
-      opacity: 0.9;
-    }
+.share-button {
+  color: $white;
+  text-align: center;
+  font-size: 1.2em;
+  padding-top: 6px;
+  margin-right: 5px;
+  height: 38px;
+  width: 40px;
+  transition: background-color 1s;
+  &:hover {
+    opacity: 0.9;
+    color: $white;
   }
-  button {
-    padding: 0.7em 1.4em;
-    font-size: 0.8em;
-    color: white;
-    transition: background-color 1s;
-    &:hover {
-      opacity: 0.9;
-      color: white;
-    }
-    &:active {
-      color: white;
-    }
+}
+button {
+  padding: 0.7em 1.4em;
+  font-size: 0.8em;
+  color: $white;
+  transition: background-color 1s;
+  &:hover {
+    opacity: 0.9;
+    color: $white;
+  }
+  &:active {
+    color: $white;
   }
 }
 .footer {

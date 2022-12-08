@@ -1,9 +1,9 @@
 import React from "react";
 
-export function NetButton({ icon, id, title, href, style }) {
+export function ShareButton({ icon, id, title, href, style }) {
   return (
     <a
-      className="button rounded-1"
+      className="share-button rounded-1"
       id={id}
       title={title}
       target="_blank"

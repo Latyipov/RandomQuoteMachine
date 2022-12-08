@@ -12,10 +12,7 @@ export function App() {
         <Quote bodyBackground={setBodyBackground} />
       </div>
       <div className="footer m-2">
-        <span className="text-white">by </span>
-        <a className="text-white" href="">
-          Latyipov
-        </a>
+        <span className="text-white">by Latyipov</span>
       </div>
     </div>
   );
